@@ -868,6 +868,11 @@ button {
     .container {
         padding: 0 1.5rem;
     }
+
+    .about-grid,
+    .contact-card {
+        gap: 2rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -881,7 +886,36 @@ button {
     }
 
     .hero-title {
-        font-size: 2.4rem;
+        font-size: 2.8rem;
+    }
+
+    .about-grid,
+    .contact-card,
+    .stats-grid,
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .contact-card {
+        padding: 2rem;
+        gap: 3rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-actions .btn-primary,
+    .hero-actions .btn-secondary {
+        width: 100%;
+        text-align: center;
     }
 
     .nav-links-desktop {
@@ -922,12 +956,6 @@ button {
         color: var(--text-primary);
     }
 
-    .stats-grid,
-    .skills-grid,
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -951,6 +979,29 @@ button {
         flex-direction: column;
         text-align: center;
         gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+    }
+
+    .skill-card {
+        padding: 2rem;
     }
 }
 
