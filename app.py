@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for, send_from_directory
 from flask_mail import Mail, Message
 from dotenv import load_dotenv
 
@@ -73,6 +73,14 @@ def project_detail(project_id):
     if not project:
         return redirect(url_for('index'))
     return render_template('project_detail.html', project=project)
+
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory(app.static_folder, 'robots.txt')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(app.static_folder, 'sitemap.xml')
 
 @app.route('/send_message', methods=['POST'])
 def send_message():

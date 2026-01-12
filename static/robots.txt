@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /static/img/private/
+Disallow: /admin/
+Disallow: /.env
+Disallow: /config/
+
+Sitemap: https://karthick-portfolio.onrender.com/sitemap.xml
