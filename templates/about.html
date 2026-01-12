@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | KARTHICK R</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    <nav class="nav nav-scrolled" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='img/logo.png') }}"
+                        alt="GRK Logo" class="logo-img"></a>
+            </div>
+            <div class="nav-links-desktop">
+                <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('about') }}" class="nav-link active">About</a>
+                <a href="{{ url_for('projects') }}" class="nav-link">Projects</a>
+                <a href="{{ url_for('freelance') }}" class="nav-link">Freelance</a>
+                <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="{{ url_for('index') }}" class="mobile-link">Home</a>
+            <a href="{{ url_for('about') }}" class="mobile-link">About</a>
+            <a href="{{ url_for('projects') }}" class="mobile-link">Projects</a>
+            <a href="{{ url_for('freelance') }}" class="mobile-link">Freelance</a>
+            <a href="{{ url_for('contact') }}" class="mobile-link">Contact</a>
+        </div>
+    </nav>
+
+    <main class="section container" style="padding-top: 150px;">
+        <div class="about-grid">
+            <div class="about-image-container" data-aos="fade-right">
+                <div class="glass-card about-image-card">
+                    <img src="{{ url_for('static', filename='img/profile_about.png') }}" alt="About Me"
+                        class="about-img">
+                </div>
+            </div>
+            <div class="about-text" data-aos="fade-left">
+                <h1 class="section-title">Who is Karthick?</h1>
+                <p class="about-p">
+                    Hello! I’m Karthick R, a motivated and detail-oriented Python Full Stack Developer with strong
+                    knowledge in Python, Django, MySQL, HTML, CSS, JavaScript, and WordPress. I have completed multiple
+                    academic and real-time projects, including a Flask-based system for entrepreneurs and several
+                    responsive websites.
+                </p>
+                <p class="about-p" style="margin-top: 1.5rem;">
+                    Currently, I am doing an internship as a Website Developer in a Digital Marketing company, where I
+                    work on website development, UI design, SEO-friendly structure, performance optimization, and
+                    content updates. I enjoy solving problems, learning new technologies, and turning ideas into
+                    functional, user-friendly applications.
+                </p>
+
+                <h3 style="margin-top: 2rem; color: var(--accent-primary);" class="gradient-text-animated">Working
+                    Experience</h3>
+                <div class="glass-card hover-reveal-card" style="padding: 2rem; margin-top: 1rem;">
+                    <h4 style="margin-bottom: 0.5rem;">Internship – Website Developer</h4>
+                    <p style="color: var(--accent-secondary); font-size: 0.9rem; margin-bottom: 1rem;">Digital Marketing
+                        as a Website Developer <br>
+                        vijayseo | Present</p>
+                    <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-secondary);">
+                        <li>Designing responsive website layouts</li>
+                        <li>Developing pages using HTML, CSS, JavaScript & WordPress</li>
+                        <li>Optimizing websites for speed and SEO</li>
+                        <li>Fixing UI/UX issues and updating content</li>
+                    </ul>
+                </div>
+
+                <h3 style="margin-top: 2rem; color: var(--accent-primary);" class="gradient-text-animated">Education
+                </h3>
+                <div class="glass-card hover-reveal-card" style="padding: 2rem; margin-top: 1rem;">
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 0.5rem;">B.E – Computer Science and Engineering</h4>
+                        <p style="color: var(--accent-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;">PGP College
+                            of Engineering and Technology | 2025</p>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">CGPA: 7.54</p>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 0.5rem;">HSC (12th)</h4>
+                        <p style="color: var(--accent-secondary); font-size: 0.9rem;">Government Higher Secondary
+                            School, Jedarpalayam</p>
+                    </div>
+
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">SSLC (10th)</h4>
+                        <p style="color: var(--accent-secondary); font-size: 0.9rem;">Government Higher Secondary
+                            School, Jedarpalayam</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="GRK Logo" class="logo-img"
+                        style="height: 40px; margin-bottom: 1.5rem;">
+                    <p style="color: var(--text-secondary); max-width: 300px;">Building premium digital experiences with
+                        Python and modern web technologies.</p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                        <li><a href="{{ url_for('freelance') }}">Freelance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="{{ url_for('freelance') }}">Web Development</a></li>
+                        <li><a href="{{ url_for('freelance') }}">SEO Optimization</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Contact</h4>
+                    <ul style="color: var(--text-secondary);">
+                        <li style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
+                            <i data-lucide="map-pin"
+                                style="width: 18px; height: 18px; color: var(--accent-primary);"></i>
+                            <span>Namakkal, Tamil Nadu</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i data-lucide="mail" style="width: 18px; height: 18px; color: var(--accent-primary);"></i>
+                            <span>karthickr27.14@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Connect</h4>
+                    <div class="footer-socials" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="https://www.linkedin.com/in/karthick-r-790629251/" target="_blank"
+                            class="social-icon-box"><i data-lucide="linkedin"></i></a>
+                        <a href="https://github.com/Karthick140" target="_blank" class="social-icon-box"><i
+                                data-lucide="github"></i></a>
+                        <a href="https://x.com/home" target="_blank" class="social-icon-box"><i
+                                data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KARTHICK R. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            AOS.init({ duration: 800, once: true });
+        });
+    </script>
+</body>
+
+</html>

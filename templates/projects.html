@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | KARTHICK R</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    <nav class="nav nav-scrolled" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='img/logo.png') }}"
+                        alt="GRK Logo" class="logo-img"></a>
+            </div>
+            <div class="nav-links-desktop">
+                <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('about') }}" class="nav-link">About</a>
+                <a href="{{ url_for('projects') }}" class="nav-link active">Projects</a>
+                <a href="{{ url_for('freelance') }}" class="nav-link">Freelance</a>
+                <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="{{ url_for('index') }}" class="mobile-link">Home</a>
+            <a href="{{ url_for('about') }}" class="mobile-link">About</a>
+            <a href="{{ url_for('projects') }}" class="mobile-link">Projects</a>
+            <a href="{{ url_for('freelance') }}" class="mobile-link">Freelance</a>
+            <a href="{{ url_for('contact') }}" class="mobile-link">Contact</a>
+        </div>
+    </nav>
+
+    <main class="section container" style="padding-top: 150px;">
+        <h1 class="section-title gradient-text-animated" data-aos="fade-up">All Projects</h1>
+        <div class="projects-grid">
+            {% for id, project in projects.items() %}
+            <div class="glass-card project-card hover-reveal-card" data-aos="fade-up"
+                data-aos-delay="{{ loop.index0 * 100 }}">
+                <div class="project-img-container">
+                    <img src="{{ project.image }}" alt="{{ project.title }}" class="project-img">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="{{ url_for('project_detail', project_id=id) }}" title="View Details"><i
+                                    data-lucide="eye"></i></a>
+                            {% if project.url %}
+                            <a href="{{ project.url }}" target="_blank" title="Live Link"><i
+                                    data-lucide="external-link"></i></a>
+                            {% endif %}
+                            <a href="#" title="View GitHub"><i data-lucide="github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.short_desc }}</p>
+                    <div class="project-tags">
+                        {% for tech in project.tech[:3] %}
+                        <span class="project-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                    <a href="{{ url_for('project_detail', project_id=id) }}" class="btn-secondary w-full"
+                        style="display: block; text-align: center; margin-top: 1.5rem; padding: 0.8rem;">View
+                        Details</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="GRK Logo" class="logo-img"
+                        style="height: 40px; margin-bottom: 1.5rem;">
+                    <p style="color: var(--text-secondary); max-width: 300px;">Building premium digital experiences with
+                        Python and modern web technologies.</p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                        <li><a href="{{ url_for('freelance') }}">Freelance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="{{ url_for('freelance') }}">Web Development</a></li>
+                        <li><a href="{{ url_for('freelance') }}">UI/UX Design</a></li>
+                        <li><a href="{{ url_for('freelance') }}">SEO Optimization</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Contact</h4>
+                    <ul style="color: var(--text-secondary);">
+                        <li style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
+                            <i data-lucide="map-pin"
+                                style="width: 18px; height: 18px; color: var(--accent-primary);"></i>
+                            <span>Namakkal, Tamil Nadu</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i data-lucide="mail" style="width: 18px; height: 18px; color: var(--accent-primary);"></i>
+                            <span>karthickr27.14@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Connect</h4>
+                    <div class="footer-socials" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="https://www.linkedin.com/in/karthick-r-790629251/" target="_blank"
+                            class="social-icon-box"><i data-lucide="linkedin"></i></a>
+                        <a href="https://github.com/Karthick140" target="_blank" class="social-icon-box"><i
+                                data-lucide="github"></i></a>
+                        <a href="https://x.com/home" target="_blank" class="social-icon-box"><i
+                                data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KARTHICK R. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            AOS.init({ duration: 800, once: true });
+        });
+    </script>
+</body>
+
+</html>

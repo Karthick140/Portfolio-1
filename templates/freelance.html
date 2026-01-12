@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Services | KARTHICK R</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-accent);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .service-icon-wrapper i {
+            width: 35px;
+            height: 35px;
+            color: var(--accent-primary);
+        }
+
+        .cta-box {
+            margin-top: 6rem;
+            text-align: center;
+            padding: 4rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+            border-radius: 32px;
+            border: 1px solid var(--glass-border);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    <nav class="nav nav-scrolled" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='img/logo.png') }}"
+                        alt="GRK Logo" class="logo-img"></a>
+            </div>
+            <div class="nav-links-desktop">
+                <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('about') }}" class="nav-link">About</a>
+                <a href="{{ url_for('projects') }}" class="nav-link">Projects</a>
+                <a href="{{ url_for('freelance') }}" class="nav-link active">Freelance</a>
+                <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="{{ url_for('index') }}" class="mobile-link">Home</a>
+            <a href="{{ url_for('about') }}" class="mobile-link">About</a>
+            <a href="{{ url_for('projects') }}" class="mobile-link">Projects</a>
+            <a href="{{ url_for('freelance') }}" class="mobile-link">Freelance</a>
+            <a href="{{ url_for('contact') }}" class="mobile-link">Contact</a>
+        </div>
+    </nav>
+
+    <main class="section container" style="padding-top: 150px;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <h1 class="section-title gradient-text-animated" data-aos="fade-up">Freelance Services</h1>
+            <p class="about-p" data-aos="fade-up" data-aos-delay="100">
+                Are you looking to build or grow your online presence? I provide professional freelance services
+                tailored to your business needs, from initial design to SEO-ready deployment.
+            </p>
+        </div>
+
+        <div class="service-grid">
+            <!-- Website Development -->
+            <div class="glass-card service-card hover-reveal-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon-wrapper">
+                    <i data-lucide="code-2"></i>
+                </div>
+                <h3>Website Development</h3>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">Building robust, scalable, and
+                    high-performance websites using Python, Flask, Django, and WordPress.</p>
+            </div>
+
+            <!-- Website Design -->
+            <div class="glass-card service-card hover-reveal-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon-wrapper">
+                    <i data-lucide="framer"></i>
+                </div>
+                <h3>Website Design</h3>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">Creating stunning UI/UX designs that are
+                    modern, professional, and fully responsive across all devices.</p>
+            </div>
+
+            <!-- SEO Optimization -->
+            <div class="glass-card service-card hover-reveal-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon-wrapper">
+                    <i data-lucide="search"></i>
+                </div>
+                <h3>SEO Optimization</h3>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">Optimizing your website structure and content
+                    to rank higher on search engines and attract more traffic.</p>
+            </div>
+
+            <!-- Digital Marketing -->
+            <div class="glass-card service-card hover-reveal-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon-wrapper">
+                    <i data-lucide="trending-up"></i>
+                </div>
+                <h3>Digital Marketing</h3>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">Strategic landing page creation and campaign
+                    UI design to help your business reach the right audience.</p>
+            </div>
+
+            <!-- Website Patch Work -->
+            <div class="glass-card service-card hover-reveal-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-icon-wrapper">
+                    <i data-lucide="wrench"></i>
+                </div>
+                <h3>Website Patch Work</h3>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">Fixing UI/UX issues, updating outdated
+                    content, and maintaining your website for peak performance.</p>
+            </div>
+
+            <!-- Full Deployment -->
+            <div class="glass-card service-card hover-reveal-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="service-icon-wrapper">
+                    <i data-lucide="rocket"></i>
+                </div>
+                <h3>End-to-End Solutions</h3>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">I handle everything from concept and design
+                    to development, testing, and final deployment.</p>
+            </div>
+        </div>
+
+        <div class="cta-box" data-aos="zoom-in">
+            <h2 style="margin-bottom: 1.5rem;">Have a Project in Mind?</h2>
+            <p
+                style="color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Let's collaborate to turn your vision into a functional and beautiful digital reality.
+            </p>
+            <a href="{{ url_for('contact') }}" class="btn-primary" style="padding: 1.2rem 3rem;">Start a
+                Conversation</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="GRK Logo" class="logo-img"
+                        style="height: 40px; margin-bottom: 1.5rem;">
+                    <p style="color: var(--text-secondary); max-width: 300px;">Building premium digital experiences with
+                        Python and modern web technologies.</p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                        <li><a href="{{ url_for('freelance') }}">Freelance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="{{ url_for('freelance') }}">Web Development</a></li>
+                        <li><a href="{{ url_for('freelance') }}">UI/UX Design</a></li>
+                        <li><a href="{{ url_for('freelance') }}">SEO Optimization</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Contact</h4>
+                    <ul style="color: var(--text-secondary);">
+                        <li style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
+                            <i data-lucide="map-pin"
+                                style="width: 18px; height: 18px; color: var(--accent-primary);"></i>
+                            <span>Namakkal, Tamil Nadu</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i data-lucide="mail" style="width: 18px; height: 18px; color: var(--accent-primary);"></i>
+                            <span>karthickr27.14@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Connect</h4>
+                    <div class="footer-socials" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="https://www.linkedin.com/in/karthick-r-790629251/" target="_blank"
+                            class="social-icon-box"><i data-lucide="linkedin"></i></a>
+                        <a href="https://github.com/Karthick140" target="_blank" class="social-icon-box"><i
+                                data-lucide="github"></i></a>
+                        <a href="https://x.com/home" target="_blank" class="social-icon-box"><i
+                                data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KARTHICK R. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            AOS.init({ duration: 800, once: true });
+        });
+    </script>
+</body>
+
+</html>
